@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rukvith Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+  background:#0b0f19;
+  color:#fff;
+}
+
+header{
+  display:flex;
+  justify-content:center;
+  padding:20px 8%;
+  background:#111827;
+}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:#ccc;
+}
+
+nav a:hover{color:#22c55e}
+
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero span{
+  color:#22c55e;
+}
+
+.hero p{
+  margin-top:10px;
+  color:#aaa;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#22c55e;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+section{
+  padding:60px 8%;
+}
+
+h2{
+  margin-bottom:20px;
+  color:#22c55e;
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.skills span{
+  background:#1f2937;
+  padding:10px 15px;
+  margin:5px;
+  border-radius:20px;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1f2937;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+.contact{
+  max-width:500px;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:5px;
+}
+
+button{
+  padding:10px;
+  background:#22c55e;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111827;
+  margin-top:40px;
+}
+
+@media(max-width:768px){
+  .about{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Hello, I'm <span>Yugandher</span></h1>
+  <p id="typing"></p>
+  <button class="btn">View My Work</button>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <p>I am a passionate frontend developer and a second-year student who loves building modern and responsive web applications.</p>
+    <p>I focus on clean UI design, performance, and user-friendly experiences.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>React</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">Medicine Reminder</div>
+    <div class="card">Weather App</div>
+    <div class="card">To-Do App</div>
+    <div class="card">Netflix Clone</div>
+    <div class="card">Calculator</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact">
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Yugandher</p>
+</footer>
+
+<script>
+const text = "Frontend Developer | React Enthusiast";
+let i = 0;
+
+function typeEffect(){
+  const el = document.getElementById("typing");
+  function type(){
+    if(i < text.length){
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type,50);
+    }
+  }
+  type();
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+</body>
+</html>
